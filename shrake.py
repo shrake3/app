@@ -30,8 +30,7 @@ def donothing():
 def quiting1():
     if backup!="":
         os.remove(backup)
-    os.remove('shrake1.png')
-    os.remove('shrake2.png')
+    os.remove('shrake.png')
     root.quit()
 
 def about():
@@ -171,12 +170,12 @@ def login_account(received=None):
             can3 = cann.create_line(1000,i,200+i,100+i, fill='light green')
             can5 = cann.create_oval(15,40,120,145,fill='grey97')
 
-        profile_btn = Button(lgn_frame1, text="   Profile   ",bg='light green',command=profile).place(x=35, y=280)
-        img_btn = Button(lgn_frame1, text='  Add File  ',bg='light blue',command=insert_image).place(x=250, y=70)
-        list_img_btn = Button(lgn_frame1, text="   List File  ",bg='light blue',command=list_image).place(x=250, y=100)
-        delete_btn = Button(lgn_frame1, command=delete_file, text="Delete File", bg='light blue').place(x=250, y=130)
-        search_btn = Button(lgn_frame1, text="search user",bg='light green', command=search_bar).place(x=433, y=100)
-        changeprofile = Button(lgn_frame1, text="Change profile",bg="light green", command=change_profile).place(x=22, y=220)
+        profile_btn = Button(lgn_frame1, text="   Profile   ", border=0,bg='light green',command=profile).place(x=35, y=280)
+        img_btn = Button(lgn_frame1, text='  Add File  ', border=0, bg='light blue',command=insert_image).place(x=250, y=70)
+        list_img_btn = Button(lgn_frame1, text="   List File  ", border=0, bg='light blue',command=list_image).place(x=250, y=100)
+        delete_btn = Button(lgn_frame1, command=delete_file, text="Delete File", border=0, bg='light blue').place(x=250, y=130)
+        search_btn = Button(lgn_frame1, text="search user", border=0, bg='light green', command=search_bar).place(x=433, y=100)
+        changeprofile = Button(lgn_frame1, text="Change profile", border=0, bg="light green", command=change_profile).place(x=22, y=220)
 
         profile_frame = Frame(lgn_frame1, width=140, height=140)
         profile_frame.place(x=5, y=65)
@@ -219,24 +218,24 @@ def login_account(received=None):
         def noti_off():
             def noti_on():
                 notification = Label(lgn_frame2, text='Notification : ON').place(x=80, y=50)
-                notification_btn = Button(lgn_frame2, text='    OFF    ', command=noti_off, bg='light blue').place(x=210, y=50)
+                notification_btn = Button(lgn_frame2,border=0, text='    OFF    ', command=noti_off, bg='light blue').place(x=210, y=50)
             notification = Label(lgn_frame2, text='Notification : OFF').place(x=80, y=50)
-            notification_btn = Button(lgn_frame2, text='    ON     ', command=noti_on, bg='light blue').place(x=210, y=50)
-        notification_btn = Button(lgn_frame2, text='    OFF    ', command=noti_off, bg='light blue').place(x=210, y=50)
+            notification_btn = Button(lgn_frame2,border=0, text='    ON     ', command=noti_on, bg='light blue').place(x=210, y=50)
+        notification_btn = Button(lgn_frame2,border=0, text='    OFF    ', command=noti_off, bg='light blue').place(x=210, y=50)
 
         sound = Label(lgn_frame2, text='Sound : ON').place(x=80, y=80)
         def sound_off():
             def sound_on():
                 sound = Label(lgn_frame2, text='Sound : ON').place(x=80, y=80)
-                sound_btn = Button(lgn_frame2, text='    OFF    ', command=sound_off, bg='light blue').place(x=210, y=80)
+                sound_btn = Button(lgn_frame2,border=0, text='    OFF    ', command=sound_off, bg='light blue').place(x=210, y=80)
             sound = Label(lgn_frame2, text='Sound : OFF').place(x=80, y=80)
-            sound_btn = Button(lgn_frame2, text='    ON     ', command=sound_on, bg='light blue').place(x=210, y=80)
-        sound_btn = Button(lgn_frame2, text='    OFF    ', command=sound_off, bg='light blue').place(x=210, y=80)
+            sound_btn = Button(lgn_frame2,border=0, text='    ON     ', command=sound_on, bg='light blue').place(x=210, y=80)
+        sound_btn = Button(lgn_frame2,border=0, text='    OFF    ', command=sound_off, bg='light blue').place(x=210, y=80)
 
         theme = Label(lgn_frame2, text='Theme : material').place(x=80, y=110)
         def theme_off():
             say = Label(lgn_frame2, text="No theme availabe right now...",fg="purple").place(x=80, y=150)
-        theme_btn = Button(lgn_frame2, text=' change ',command=theme_off, bg='light blue').place(x=210, y=110)
+        theme_btn = Button(lgn_frame2,border=0, text=' change ',command=theme_off, bg='light blue').place(x=210, y=110)
 
     def privacy_setting():
         def see_set():
@@ -246,9 +245,9 @@ def login_account(received=None):
                 who_can_see = Label(lgn_frame2, text='Who can see your Profile :  Friends   ').place(x=20, y=20)
             def only_set():
                 who_can_see = Label(lgn_frame2, text='Who can see your Profile :  Only me ').place(x=20, y=20)
-            everyone_btn = Button(lgn_frame2,command=every_set, text=' Everyone ', bg='light green').place(x=30, y=55)
-            friend_btn = Button(lgn_frame2,command=friend_set, text='  Friends ', bg='light green').place(x=120, y=55)
-            onlyme_btn = Button(lgn_frame2,command=only_set, text='  Only me ', bg='light green').place(x=200, y=55)
+            everyone_btn = Button(lgn_frame2, border=0, command=every_set, text=' Everyone ', bg='light green').place(x=30, y=55)
+            friend_btn = Button(lgn_frame2, border=0, command=friend_set, text='  Friends ', bg='light green').place(x=120, y=55)
+            onlyme_btn = Button(lgn_frame2, border=0, command=only_set, text='  Only me ', bg='light green').place(x=200, y=55)
 
         def send_set():
             def any_set():
@@ -257,28 +256,28 @@ def login_account(received=None):
                 who_can_send = Label(lgn_frame2, text="Who can send you message :  Friends ").place(x=20, y=100)
             def me_set():
                 who_can_send = Label(lgn_frame2, text="Who can send you message :  Only me ").place(x=20, y=100)
-            anyone_btn = Button(lgn_frame2,command=any_set, text='  Anyone  ', bg='light green').place(x=30, y=135)
-            friend_btn = Button(lgn_frame2,command=fr_set, text='  Friends ', bg='light green').place(x=120, y=135)
-            onlyme_btn = Button(lgn_frame2,command=me_set, text='  Only me ', bg='light green').place(x=200, y=135)
+            anyone_btn = Button(lgn_frame2, border=0, command=any_set, text='  Anyone  ', bg='light green').place(x=30, y=135)
+            friend_btn = Button(lgn_frame2, border=0, command=fr_set, text='  Friends ', bg='light green').place(x=120, y=135)
+            onlyme_btn = Button(lgn_frame2, border=0, command=me_set, text='  Only me ', bg='light green').place(x=200, y=135)
 
         def encrypt_set():
             def yes_set():
                 encrypt_data = Label(lgn_frame2, text="encrypt your data :  Yes ").place(x=20, y=180)
             def no_set():
                 encrypt_data = Label(lgn_frame2, text="encrypt your data :  No  ").place(x=20, y=180)
-            encrypt_data_btn = Button(lgn_frame2,command=yes_set, text='  Yes  ', bg='light blue').place(x=80, y=210)
-            encrypt_data_btn = Button(lgn_frame2,command=no_set, text='   No  ', bg='light blue').place(x=160, y=210)
+            encrypt_data_btn = Button(lgn_frame2, border=0, command=yes_set, text='  Yes  ', bg='light blue').place(x=80, y=210)
+            encrypt_data_btn = Button(lgn_frame2, border=0, command=no_set, text='   No  ', bg='light blue').place(x=160, y=210)
 
         lgn_frame2 = Frame(lgn_frame1,width=500, height=500)
         lgn_frame2.place(x=400,y=90)
         who_can_see = Label(lgn_frame2, text='Who can see your Profile :  Everyone').place(x=20, y=20)
-        who_can_see_btn = Button(lgn_frame2,command=see_set, text=' change ', bg='light blue').place(x=230, y=20)
+        who_can_see_btn = Button(lgn_frame2, border=0, command=see_set, text=' change ', bg='light blue').place(x=230, y=20)
 
         who_can_send = Label(lgn_frame2, text="Who can send you message :  Anyone").place(x=20, y=100)
-        who_can_send_btn = Button(lgn_frame2, command=send_set, text=' change ', bg='light blue').place(x=230, y=100)
+        who_can_send_btn = Button(lgn_frame2, border=0, command=send_set, text=' change ', bg='light blue').place(x=230, y=100)
 
         encrypt_data = Label(lgn_frame2, text="encrypt your data :  Yes").place(x=20, y=180)
-        encrypt_data_btn = Button(lgn_frame2,command=encrypt_set, text=' change ', bg='light blue').place(x=230, y=180)
+        encrypt_data_btn = Button(lgn_frame2, border=0, command=encrypt_set, text=' change ', bg='light blue').place(x=230, y=180)
 
     def account_setting(statement = None):
 
@@ -288,7 +287,6 @@ def login_account(received=None):
                 global lgn_name
                 new_name = _name.get()
                 first, last =new_name.split(" ")
-                # print(new_name,first,last)
                 c.execute("UPDATE data SET f_name=? WHERE username=?",(first,lgn_name))
                 conn.commit()
                 c.execute("UPDATE data SET l_name=? WHERE username=?",(last,lgn_name))
@@ -297,7 +295,7 @@ def login_account(received=None):
                 account_setting("Name Changed Successfully")
 
 
-            save_btn = Button(lgn_frame2, text='    save    ', bg='light green',command=save_change_name).place(x=230, y=10)
+            save_btn = Button(lgn_frame2, border=0, text='    save    ', bg='light green',command=save_change_name).place(x=230, y=10)
             lbl = Label(lgn_frame2,text='New Name : ').place(x=35, y=40)
             _name = Entry(lgn_frame2)
             _name.place(x=125, y=40)
@@ -312,7 +310,7 @@ def login_account(received=None):
                 user_fullname[2] = email
                 account_setting('Email Changed Successfully')
 
-            save_btn = Button(lgn_frame2, text='    save    ', bg='light green',command=save_change_email).place(x=230, y=70)
+            save_btn = Button(lgn_frame2, border=0, text='    save    ', bg='light green',command=save_change_email).place(x=230, y=70)
             lbl = Label(lgn_frame2,text='New Email : ').place(x=35, y=100)
             n_email = Entry(lgn_frame2)
             n_email.place(x=125, y=100)
@@ -340,15 +338,15 @@ def login_account(received=None):
                 else:
                     msg1 = tkinter.messagebox.showwarning("Info","Incorrect Password")
 
-            save_btn = Button(lgn_frame2, text='    save    ', bg='light green',command=save_change_password).place(x=230, y=140)
+            save_btn = Button(lgn_frame2, border=0, text='    save    ', bg='light green',command=save_change_password).place(x=230, y=140)
             lbl = Label(lgn_frame2,text='Old password : ').place(x=35, y=180)
             lbl = Label(lgn_frame2,text='New password : ').place(x=35, y=210)
             lbl = Label(lgn_frame2,text='New password : ').place(x=35, y=240)
-            old_1 = Entry(lgn_frame2)
+            old_1 = Entry(lgn_frame2, show="\u2022")
             old_1.place(x=125, y=180)
-            new_1 = Entry(lgn_frame2)
+            new_1 = Entry(lgn_frame2, show="\u2022")
             new_1.place(x=125, y=210)
-            new_2 = Entry(lgn_frame2)
+            new_2 = Entry(lgn_frame2, show="\u2022")
             new_2.place(x=125, y=240)
 
 
@@ -356,13 +354,13 @@ def login_account(received=None):
         lgn_frame2.place(x=400,y=90)
 
         name = Label(lgn_frame2,text='Name :  ' +user_fullname[0]+' '+user_fullname[1]).place(x=35, y=10)
-        name_btn = Button(lgn_frame2, text=' change ', bg='light blue',command=change_name).place(x=230, y=10)
+        name_btn = Button(lgn_frame2, border=0, text=' change ', bg='light blue',command=change_name).place(x=230, y=10)
 
         email = Label(lgn_frame2,text='Email :  '+user_fullname[2]).place(x=35, y=70)
-        email_btn = Button(lgn_frame2, text=' change ', bg='light blue',command=change_email).place(x=230, y=70)
+        email_btn = Button(lgn_frame2, border=0, text=' change ', bg='light blue',command=change_email).place(x=230, y=70)
 
-        password = Label(lgn_frame2,text="Password :  *******").place(x=35, y=140)
-        password_btn = Button(lgn_frame2, text=' change ', bg='light blue',command=change_password).place(x=230, y=140)
+        password = Label(lgn_frame2, text="Password :  *******").place(x=35, y=140)
+        password_btn = Button(lgn_frame2, border=0, text=' change ', bg='light blue',command=change_password).place(x=230, y=140)
         if statement !=None:
             lbl2 = Label(lgn_frame2,text=statement, fg='green').place(x=120, y=270)
 
@@ -372,7 +370,7 @@ def login_account(received=None):
     if received == None:
         lgn_name = uname.get()
         lgn_passwd = passwd.get()
-  #  c.execute("SELECT username,password FROM data WHERE username=:user AND password=:passwd",{'user':lgn_name, 'passwd':lgn_passwd})
+
 
     c.execute("SELECT username,password FROM data WHERE username=? AND password=?",(lgn_name, lgn_passwd))
     conn.commit()
@@ -383,11 +381,12 @@ def login_account(received=None):
         tkinter.messagebox.showerror('Info',"Incorrect Credential...\n\nTry Again...")
     else:
 
-        # lgn = Toplevel()
+
         frame2.destroy()
         lgn = root
         lgn.title('shrake')
         lgn.geometry('950x500+200+100')
+        lgn.overrideredirect(False)
         lgn_frame1 = Frame(lgn, width=950, height=200)
         lgn_frame1.pack(fill=BOTH)
         chck = Label(lgn_frame1, text="",bg="light blue").pack(fill=X)
@@ -406,8 +405,7 @@ def login_account(received=None):
                 os.remove(backup)
 
             os.remove('profile.png')
-            os.remove('shrake1.png')
-            os.remove('shrake2.png')
+            os.remove('shrake.png')
             root.quit()
 
         logout_btn = Button(lgn_frame1, text="   Logout   ",command=quiting,bg="light green").place(x=850, y=15)
@@ -422,7 +420,7 @@ def login_account(received=None):
             can5 = can.create_oval(15,40,120,145,fill='grey97')
 
 
-        profile_btn = Button(lgn_frame1, text="   Profile   ",bg='light green',command=profile).place(x=35, y=280)
+        profile_btn = Button(lgn_frame1, text="   Profile   ", border=0, bg='light green',command=profile).place(x=35, y=280)
 
         menu = Menubutton(lgn_frame1, text="       setting       ", bg="light green")
         menu.place(x=750, y=15)
@@ -432,11 +430,11 @@ def login_account(received=None):
         sub_menu.add_command(label="Privacy",command=privacy_setting)
         sub_menu.add_command(label="Account",command=account_setting)
 
-        img_btn = Button(lgn_frame1, text="  Add File  ",bg='light blue',command=insert_image).place(x=250, y=70)
+        img_btn = Button(lgn_frame1, text="  Add File  ", border=0, bg='light blue',command=insert_image).place(x=250, y=70)
 
-        list_img_btn = Button(lgn_frame1, text="   List File  ",bg='light blue',command=list_image).place(x=250, y=100)
+        list_img_btn = Button(lgn_frame1, text="   List File  ", border=0, bg='light blue',command=list_image).place(x=250, y=100)
 
-        delete_btn = Button(lgn_frame1, command=delete_file, text="Delete File", bg='light blue').place(x=250, y=130)
+        delete_btn = Button(lgn_frame1, command=delete_file, border=0, text="Delete File", bg='light blue').place(x=250, y=130)
         def search_bar():
 
             def search_user():
@@ -481,7 +479,7 @@ def login_account(received=None):
 
             search = Entry(lgn_frame1,width=40)
             search.place(x=350, y=70)
-            search_btn = Button(lgn_frame1, text="    search    ",bg='light green', command=search_user).place(x=433, y=100)
+            search_btn = Button(lgn_frame1, text="    search    ", border=0, bg='light green', command=search_user).place(x=433, y=100)
 
 
         def change_profile():
@@ -506,9 +504,9 @@ def login_account(received=None):
                 c1.create_image(image=img_1)
 
 
-        search_btn = Button(lgn_frame1, text="search user",bg='light green', command=search_bar).place(x=433, y=100)
+        search_btn = Button(lgn_frame1, border=0, text="search user",bg='light green', command=search_bar).place(x=433, y=100)
 
-        changeprofile = Button(lgn_frame1, text="Change profile",bg="light green", command=change_profile).place(x=22, y=220)
+        changeprofile = Button(lgn_frame1, text="Change profile", border=0, bg="light green", command=change_profile).place(x=22, y=220)
 
 #***********  pic from DB *******
 
@@ -568,7 +566,7 @@ def create_account():
                     email = entry_6.get()
                     c.execute("INSERT INTO data VALUES(?,?,?,?,?)", (fname, lname, uname, passwd, email))
                     conn.commit()
-                    text = Label(cr, text='                                                      ').place(x=90, y=270)
+                    text = Label(cr, text='  ', padx=350, pady=5, bg="grey40").place(x=30, y=290)
                     review = tkinter.messagebox.showinfo('Information', "Account Successfully Created.")
                     if review=='ok':
                         frame3.destroy()
@@ -580,56 +578,60 @@ def create_account():
 
 
                 else:
-                    text1 = Label(cr, text="      required fields are empty       ", fg='red').place(x=90, y=270)
+                    text1 = Label(cr, text="    * required fields are empty       ",bg="grey50", fg='cyan', font=("",10,"bold")).place(x=90, y=290)
 
             else:
-                text = Label(cr, text='        password does not match         ', fg='red').place(x=90, y=270)
+                text = Label(cr, text='      * password does not match         ',bg="grey50", fg='cyan', font=("",10,"bold")).place(x=90, y=290)
 
         else:
-            text = Label(cr, text="       This username is not available...      ", fg='red').place(x=70, y=270)
+            text = Label(cr, text="     * This username is not available...      ", bg="grey50", fg='cyan', font=("",10,"bold")).place(x=70, y=290)
 
 
     frame2.destroy()
     cr = root
     cr.title("Create Account")
-    cr.geometry("350x300+450+200")
-    frame3 = Frame(cr)
+    cr.geometry("400x330+450+200")
+    cr.overrideredirect(False)
+    frame3 = Frame(cr, bg="grey40")
     frame3.pack()
-    frame4 = Frame(cr, width=350, height=250)
+    frame4 = Frame(cr, width=400, height=310, bg="grey40")
     frame4.pack()
-    label_1 = Label(frame3, text='Creating Account', bg='light blue').pack(fill=X)
-    logo_img = Label(frame4, image=img2).place(x=270, y=6)
-    shrake_img = Label(frame4, image=img1).place(x=265, y=65)
+    label_1 = Label(frame3, text='Creating Account', bg="grey50", fg="light green", font=("consolas",15,"bold"), padx=400).pack(fill=X)
+    logo_img = Label(frame4, image=img, bg="grey40").place(x=280, y=16)
 
-    label_2 = Label(frame4, text="First Name ").place(x=30, y=10)
-    label_3 = Label(frame4, text='Last Name ').place(x=30, y=40)
-    label_4 = Label(frame4, text='Username').place(x=30, y=70)
-    label_5 = Label(frame4, text='Password ').place(x=30, y=100)
-    label_6 = Label(frame4, text='Confirm ').place(x=30, y=130)
-    label_7 = Label(frame4, text='Email ').place(x=30, y=160)
+    label_2 = Label(frame4, text="First Name ",bg="grey40", fg="white").place(x=30, y=10)
+    label_3 = Label(frame4, text='Last Name ',bg="grey40", fg="white").place(x=30, y=40)
+    label_4 = Label(frame4, text='Username',bg="grey40", fg="white").place(x=30, y=70)
+    label_5 = Label(frame4, text='Password ',bg="grey40", fg="white").place(x=30, y=100)
+    label_6 = Label(frame4, text='Confirm ',bg="grey40", fg="white").place(x=30, y=130)
+    label_7 = Label(frame4, text='Email ',bg="grey40", fg="white").place(x=30, y=160)
 
-    entry_1 = Entry(frame4)
+    entry_1 = Entry(frame4, bg="grey90", width=23, font=("consolas",10))
     entry_1.place(x=100, y=10)
 
-    entry_2 = Entry(frame4)
+    entry_2 = Entry(frame4, bg="grey90", width=23, font=("consolas",10))
     entry_2.place(x=100, y=40)
 
-    entry_3 = Entry(frame4)
+    entry_3 = Entry(frame4, bg="grey90", width=23, font=("consolas",10))
     entry_3.place(x=100, y=70)
 
-    entry_4 = Entry(frame4)
+    entry_4 = Entry(frame4, bg="grey90", show="\u2022", width=23, font=("consolas",10))
     entry_4.place(x=100, y=100)
 
-    entry_5 = Entry(frame4)
+    entry_5 = Entry(frame4, bg="grey90", show="\u2022", width=23, font=("consolas",10))
     entry_5.place(x=100, y=130)
 
-    entry_6 = Entry(frame4)
+    entry_6 = Entry(frame4, bg="grey90", width=23, font=("consolas",10))
     entry_6.place(x=100, y=160)
-    chk_btn = Checkbutton(frame4, text="I Agree to \' Term and Condition \'")
+    chk_btn = Checkbutton(frame4, text="I Agree to \' Term and Condition \'", bg="grey40", fg="cyan")
     chk_btn.place(x=65, y=190)
-    sign_up_btn = Button(frame4, text="sign up", command=info_saving, bg='light green')
+
+    des = Canvas(frame4, width=51, height=24).place(x=134, y=219)
+    des = Canvas(frame4, width=51, height=24).place(x=249, y=219)
+
+    sign_up_btn = Button(frame4, text=" sign up", border=0, padx=3, pady=3, command=info_saving, bg='grey40', fg="white")
     sign_up_btn.place(x=135, y=220)
-    close_btn = Button(frame4, text=' Close ', command=frame4.quit, bg='red')
+    close_btn = Button(frame4, text='  Close ', border=0, padx=5, pady=3, command=frame4.quit, bg='grey40', fg="white")
     close_btn.place(x=250, y=220)
 
 #*************  root  ***********
@@ -637,78 +639,79 @@ def create_account():
 
 root = Tk()
 
-raw1 = """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"""
-
-raw2 = """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"""
+raw = """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"""
 
 """
-raw1 and raw2 are encoded by base64
+raw are encoded by base64
     raw = base64.b64encode(file)
 decoded = base64.b64decode(raw)
 
 """
 
+with open('shrake.png','wb') as txt:
+    txt.write(base64.b64decode(raw))
 
-with open('shrake1.png','wb') as txt:
-    txt.write(base64.b64decode(raw1))
-
-with open('shrake2.png','wb') as txt:
-    txt.write(base64.b64decode(raw2))
-
-img1 = PhotoImage(file='shrake1.png')
-img2 = PhotoImage(file='shrake2.png')
+img = PhotoImage(file='shrake.png')
 root.title("Shrake Authentication")
-root.geometry("350x150+450+200")
-root.tk.call('wm','iconphoto',root._w, img2)
+root.geometry("400x200+450+200")
+root.overrideredirect(True)
+root.tk.call('wm','iconphoto',root._w, img)
 
-frame1 = Frame(root)
-frame2 = Frame(root, width=350, height=150)
+frame1 = Frame(root, width=400, height=30, bg="grey90")
+frame2 = Frame(root, width=400, height=200, bg="grey40")
 
-mainMenu = Menu(frame1)
-root.config(menu=mainMenu)
+def toolbar():
+    mainMenu = Menu(frame1)
+    root.config(menu=mainMenu, bg="grey40")
 
-fileSubMenu = Menu(mainMenu)
-mainMenu.add_cascade(label="File", menu=fileSubMenu)
-fileSubMenu.add_command(label="New      Ctrl+N", command=donothing)
-fileSubMenu.add_command(label="open     Ctrl+O", command=donothing)
-fileSubMenu.add_command(label="Save      Ctrl+S", command=donothing)
-fileSubMenu.add_command(label="save as", command=donothing)
-fileSubMenu.add_separator()
-fileSubMenu.add_command(label="Exit", command=quiting1)
+    fileSubMenu = Menu(mainMenu,border=0, bg="grey40", fg="white")
+    mainMenu.add_cascade(label="File", menu=fileSubMenu)
+    fileSubMenu.add_command(label="New      Ctrl+N", command=donothing)
+    fileSubMenu.add_command(label="open     Ctrl+O", command=donothing)
+    fileSubMenu.add_command(label="Save      Ctrl+S", command=donothing)
+    fileSubMenu.add_command(label="save as", command=donothing)
+    fileSubMenu.add_separator()
+    fileSubMenu.add_command(label="Exit", command=quiting1)
 
-editSubMenu = Menu(mainMenu)
-mainMenu.add_cascade(label="Edit", menu=editSubMenu)
-editSubMenu.add_command(label="Undo      Ctrl+Z", command=donothing)
-editSubMenu.add_command(label="Redo       Ctrl+Y", command=donothing)
-editSubMenu.add_command(label="Cut          Ctrl+X", command=donothing)
-editSubMenu.add_command(label="Copy       Ctrl+C", command=donothing)
-editSubMenu.add_command(label="Paste       Ctrl+V", command=donothing)
+    editSubMenu = Menu(mainMenu, bg="grey40", fg="white")
+    mainMenu.add_cascade(label="Edit", menu=editSubMenu)
+    editSubMenu.add_command(label="Undo      Ctrl+Z", command=donothing)
+    editSubMenu.add_command(label="Redo       Ctrl+Y", command=donothing)
+    editSubMenu.add_command(label="Cut          Ctrl+X", command=donothing)
+    editSubMenu.add_command(label="Copy       Ctrl+C", command=donothing)
+    editSubMenu.add_command(label="Paste       Ctrl+V", command=donothing)
 
-helpMenu = Menu(mainMenu)
-mainMenu.add_cascade(label="Help", menu=helpMenu)
-helpMenu.add_command(label="Documentation", command=donothing)
-helpMenu.add_command(label="twitter", command=donothing)
-helpMenu.add_command(label="Update License", command=donothing)
-helpMenu.add_command(label="Check for Update..", command=donothing)
-helpMenu.add_command(label="About", command=about)
-frame1.pack()
-
-logo_img = Label(frame2, image=img2).place(x=270, y=6)
-shrake_img = Label(frame2, image=img1).place(x=265, y=65)
-
-text1 = Label(frame2, text="Username : ").place(x=30, y=10)
-text2 = Label(frame2, text="Password  : ").place(x=30, y=40)
-uname = Entry(frame2)
-uname.place(x=95, y=10)
-passwd = Entry(frame2)
-passwd.place(x=95, y=40)
+    helpMenu = Menu(mainMenu, bg="grey40", fg="white")
+    mainMenu.add_cascade(label="Help", menu=helpMenu)
+    helpMenu.add_command(label="Documentation", command=donothing)
+    helpMenu.add_command(label="twitter", command=donothing)
+    helpMenu.add_command(label="Update License", command=donothing)
+    helpMenu.add_command(label="Check for Update..", command=donothing)
+    helpMenu.add_command(label="About", command=about)
+    frame1.pack()
 
 
-check_btn = Checkbutton(frame2, text="Keep me logged in.").place(x=60, y=70)
-login_btn = Button(frame2, text=" Login ", command=login_account, bg="light green").place(x=80, y=100)
-cancel_btn = Button(frame2, text=" Cancel", command=quiting1, bg="red").place(x=180, y=100)
-signup_btn = Button(frame2, text="Sign up", command=create_account, bg='light blue')
-signup_btn.place(x=280, y=100)
+heading = Label(frame2, text="Shrake Authentication", font=("consolas",18,"bold","italic"), bg="grey40", fg="black").place(x=60, y=10)
+
+logo_img = Label(frame2, image=img, bg="grey40").place(x=290, y=50)
+
+text1 = Label(frame2, text="Username : ", bg="grey40", fg="white").place(x=30, y=70)
+text2 = Label(frame2, text="Password  : ", bg="grey40", fg="white").place(x=30, y=100)
+uname = Entry(frame2, bg='grey90', width=25, font=("consolas",10,"bold"))
+uname.place(x=95, y=70)
+passwd = Entry(frame2, bg="grey90",show="\u2022", width=25, font=("consolas",10,"bold"))
+passwd.place(x=95, y=100)
+
+btn_design = Canvas(frame2, width=51, height=24).place(x=59, y=149)
+btn_design = Canvas(frame2, width=51, height=24).place(x=173, y=149)
+btn_design = Canvas(frame2, width=51, height=24).place(x=288, y=149)
+
+
+signup_btn = Button(frame2, text="Sign up", border=0, padx=4, pady=3, bg="grey40", fg="white", command=create_account).place(x=60, y=150)
+login_btn = Button(frame2, text="  Login ", border=0, padx=4, pady=3, command=login_account, bg="grey40", fg="white", font=("",9,"bold")).place(x=174, y=150)
+cancel_btn = Button(frame2, text=" Cancel ", border=0, padx=3, pady=3, command=quiting1, bg="grey40", fg="white").place(x=289, y=150)
+
+
 frame2.pack()
 
 root.mainloop()
